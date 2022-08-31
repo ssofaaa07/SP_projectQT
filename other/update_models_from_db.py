@@ -30,4 +30,5 @@ def update_schema(schema):
 cur, con = db_conn()
 cur.execute("SELECT schema_name FROM " + '"information_schema"' + ".schemata")
 schemas = [schema[0] for schema in cur.fetchall()]
-update_all_schemas(schemas)
+
+# update_all_schemas(schemas)

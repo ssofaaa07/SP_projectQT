@@ -6,194 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>806</width>
-    <height>590</height>
+    <width>1040</width>
+    <height>859</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="MainParametersFrame">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>401</width>
-      <height>431</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QWidget" name="verticalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>401</width>
-       <height>431</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="MainParametesVerticalLayout">
-      <item>
-       <widget class="QFrame" name="MPSubFrame">
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QLabel" name="MainParametersLabel">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>10</y>
-           <width>399</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Документы субъект РФ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-        </widget>
-       </widget>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="RPVerticalLayout">
-        <item>
-         <widget class="QLabel" name="RPLabel">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Региональные проекты&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="RPComboBox"/>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="GPVerticalLayout">
-        <item>
-         <widget class="QLabel" name="GPlabel">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Государственные программы&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="GPComboBox"/>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="StrategyVerticalLayout">
-        <item>
-         <widget class="QLabel" name="StrategyLabel">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Стратегия развития&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="StrategyComboBox"/>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="PMVerticalLayout">
-        <item>
-         <widget class="QLabel" name="PMLabel">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;План мероприятий по реализации Стратегии развития&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="PMComboBox"/>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QFrame" name="OtherParametersFrame">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>110</y>
-      <width>371</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QWidget" name="verticalLayoutWidget_6">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>351</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="OtherParametersVerticalLayout">
-      <item>
-       <widget class="QFrame" name="OPSubFrame">
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QLabel" name="OtherParametersNameLabel">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>349</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Документы РФ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-        </widget>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="OtherParametersHorizontalLayout">
-        <item>
-         <widget class="QLabel" name="OtherParametersLabel">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;ЦУР&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="OtherParametersComboBox"/>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </widget>
+  <widget class="QWidget" name="centralWidget">
    <widget class="QFrame" name="SaveParametersFrame">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>410</y>
+      <x>330</x>
+      <y>680</y>
       <width>371</width>
       <height>131</height>
      </rect>
@@ -213,9 +38,9 @@
        <height>111</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="SaveParametersHorizontalLayout">
+     <layout class="QHBoxLayout" name="saveParametersHorizontalLayout">
       <item>
-       <widget class="QPushButton" name="ComparePushButton">
+       <widget class="QPushButton" name="comparePushButton">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -228,7 +53,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="SavePushButton">
+       <widget class="QPushButton" name="savePushButton">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -241,9 +66,9 @@
        </widget>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="SaveAsVerticalLayout">
+       <layout class="QVBoxLayout" name="saveAsVerticalLayout">
         <item>
-         <widget class="QLabel" name="SaveAsLabel">
+         <widget class="QLabel" name="saveAsLabel">
           <property name="maximumSize">
            <size>
             <width>16777215</width>
@@ -256,21 +81,21 @@
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="TextRadioButton">
+         <widget class="QRadioButton" name="textRadioButton">
           <property name="text">
            <string>Текст</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="TableRadioButton">
+         <widget class="QRadioButton" name="tableRadioButton">
           <property name="text">
            <string>Таблица</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="GraphRadioButton">
+         <widget class="QRadioButton" name="graphRadioButton">
           <property name="text">
            <string>График</string>
           </property>
@@ -287,8 +112,20 @@
       <x>10</x>
       <y>10</y>
       <width>401</width>
-      <height>51</height>
+      <height>115</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>115</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>115</height>
+     </size>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -296,25 +133,148 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QWidget" name="formLayoutWidget">
+    <widget class="QWidget" name="verticalLayoutWidget">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>10</y>
-       <width>400</width>
-       <height>31</height>
+       <y>0</y>
+       <width>401</width>
+       <height>111</height>
       </rect>
      </property>
-     <layout class="QFormLayout" name="PeriodFormLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="YearsLabel">
-        <property name="text">
-         <string>Выберите период:</string>
+     <layout class="QVBoxLayout" name="periodVerticalLayout">
+      <item>
+       <widget class="QFrame" name="headerFrame">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QWidget" name="horizontalLayoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>399</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="buttonHorizontalLayout">
+          <item>
+           <widget class="QPushButton" name="oneYearButton">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Один год</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="yearPeriodButton">
+            <property name="text">
+             <string>Период </string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QLabel" name="headerLabel">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>399</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;ПЕРИОД&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="periodLayout">
+        <item>
+         <layout class="QHBoxLayout" name="periodHorizontalLayout">
+          <item>
+           <widget class="QLabel" name="fromLabel">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>30</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;ОТ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="fromComboBox"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="toLabel">
+            <property name="maximumSize">
+             <size>
+              <width>30</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;ДО&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="toComboBox"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QComboBox" name="oneYearComboBox">
+        <property name="styleSheet">
+         <string notr="true"/>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="YearsComboBox"/>
+      <item>
+       <widget class="QLabel" name="footerLabel">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Дата указывается включительно&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -322,10 +282,10 @@
    <widget class="QFrame" name="PFFrame">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>640</x>
       <y>10</y>
       <width>371</width>
-      <height>51</height>
+      <height>111</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -338,35 +298,355 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>10</y>
+       <y>40</y>
        <width>351</width>
        <height>25</height>
       </rect>
      </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="PlanFactLabel">
-        <property name="text">
-         <string>Выберите:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QRadioButton" name="PlanRadioButton">
+     <layout class="QGridLayout" name="PFGridLayout">
+      <item row="0" column="2">
+       <widget class="QRadioButton" name="planRadioButton">
         <property name="text">
          <string>План</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QRadioButton" name="FactRadioButton">
+      <item row="0" column="3">
+       <widget class="QRadioButton" name="factRadioButton">
         <property name="text">
          <string>Факт</string>
         </property>
        </widget>
       </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="planFactLabel">
+        <property name="text">
+         <string>Выберите:</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="QFrame" name="IndicatorsFrame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>1021</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>1001</width>
+       <height>504</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="indicatorsHorizontalLayout">
+      <item>
+       <widget class="QFrame" name="secindIndicatorFrame">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QWidget" name="verticalLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>-1</x>
+           <y>-1</y>
+           <width>501</width>
+           <height>501</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="secondIndVerticalLayout">
+          <item>
+           <widget class="QLabel" name="firstIndicatorLabel">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;ПЕРВЫЙ ПОКАЗАТЕЛЬ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="GPPushButton">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Государственные программы</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="strategyPushButton">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Стратегия развития</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="PMPushButton">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>План мероприятий по реализации Стратегии развития</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="RPPushButton">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Региональные проекты</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="CYRPushButton">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>ЦУР</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="firstIndicatorFrame">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QWidget" name="verticalLayoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>-1</x>
+           <y>-1</y>
+           <width>501</width>
+           <height>501</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="firstIndVerticalLayout">
+          <item>
+           <widget class="QLabel" name="secondIndicatorLabel">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;ВТОРОЙ ПОКАЗАТЕЛЬ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="GPPushButton2">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Государственные программы</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="strategyPushButton2">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Стратегия развития</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="PMPushButton2">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>План мероприятий по реализации Стратегии развития</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="RPPushButton2">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Региональные проекты</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="CYRPushButton2">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>ЦУР</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>680</y>
+      <width>311</width>
+      <height>130</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_4">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>680</y>
+      <width>311</width>
+      <height>130</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -374,7 +654,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>806</width>
+     <width>1040</width>
      <height>22</height>
     </rect>
    </property>
