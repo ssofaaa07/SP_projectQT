@@ -7,11 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>1040</width>
-    <height>859</height>
+    <height>897</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QFrame" name="SaveParametersFrame">
@@ -20,7 +23,7 @@
       <x>330</x>
       <y>680</y>
       <width>371</width>
-      <height>131</height>
+      <height>171</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -33,7 +36,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>10</y>
+       <y>50</y>
        <width>351</width>
        <height>111</height>
       </rect>
@@ -102,6 +105,39 @@
          </widget>
         </item>
        </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>351</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="PFGridLayout">
+      <item row="0" column="2">
+       <widget class="QRadioButton" name="planRadioButton">
+        <property name="text">
+         <string>План</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QRadioButton" name="factRadioButton">
+        <property name="text">
+         <string>Факт</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="planFactLabel">
+        <property name="text">
+         <string>Выберите:</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -279,7 +315,7 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QFrame" name="PFFrame">
+   <widget class="QFrame" name="DBInfoFrame">
     <property name="geometry">
      <rect>
       <x>640</x>
@@ -294,38 +330,44 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QWidget" name="gridLayoutWidget">
+    <widget class="QLabel" name="updateDataInfoLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>331</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Информация из базы данных обновлена</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressBar">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>40</y>
        <width>351</width>
-       <height>25</height>
+       <height>23</height>
       </rect>
      </property>
-     <layout class="QGridLayout" name="PFGridLayout">
-      <item row="0" column="2">
-       <widget class="QRadioButton" name="planRadioButton">
-        <property name="text">
-         <string>План</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QRadioButton" name="factRadioButton">
-        <property name="text">
-         <string>Факт</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLabel" name="planFactLabel">
-        <property name="text">
-         <string>Выберите:</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <property name="value">
+      <number>100</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="updateDataInfoLabel2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>331</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Автообновление через: </string>
+     </property>
     </widget>
    </widget>
    <widget class="QFrame" name="IndicatorsFrame">
@@ -354,7 +396,7 @@
      </property>
      <layout class="QHBoxLayout" name="indicatorsHorizontalLayout">
       <item>
-       <widget class="QFrame" name="secindIndicatorFrame">
+       <widget class="QFrame" name="firstIndicatorFrame">
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -370,7 +412,7 @@
            <height>501</height>
           </rect>
          </property>
-         <layout class="QVBoxLayout" name="secondIndVerticalLayout">
+         <layout class="QVBoxLayout" name="firstIndVerticalLayout">
           <item>
            <widget class="QLabel" name="firstIndicatorLabel">
             <property name="maximumSize">
@@ -484,7 +526,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="firstIndicatorFrame">
+       <widget class="QFrame" name="secondIndicatorFrame">
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -500,7 +542,7 @@
            <height>501</height>
           </rect>
          </property>
-         <layout class="QVBoxLayout" name="firstIndVerticalLayout">
+         <layout class="QVBoxLayout" name="secondIndVerticalLayout">
           <item>
            <widget class="QLabel" name="secondIndicatorLabel">
             <property name="maximumSize">
@@ -622,7 +664,7 @@
       <x>10</x>
       <y>680</y>
       <width>311</width>
-      <height>130</height>
+      <height>170</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -631,6 +673,19 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
+    <widget class="QLabel" name="firstIndicatorInfo">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>291</width>
+       <height>150</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="frame_4">
     <property name="geometry">
@@ -638,7 +693,7 @@
       <x>710</x>
       <y>680</y>
       <width>311</width>
-      <height>130</height>
+      <height>170</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -647,6 +702,19 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
+    <widget class="QLabel" name="secondIndicatorInfo">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>291</width>
+       <height>150</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -658,8 +726,25 @@
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Настройки</string>
+    </property>
+    <addaction name="autoUpdateAction"/>
+   </widget>
+   <addaction name="menu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="autoUpdateAction">
+   <property name="text">
+    <string>Частота автообновления</string>
+   </property>
+  </action>
+  <action name="update">
+   <property name="text">
+    <string>Ручное обновление</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

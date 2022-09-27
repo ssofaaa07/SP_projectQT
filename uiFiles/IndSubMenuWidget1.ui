@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QScrollArea" name="scrollArea_2">
+  <widget class="QScrollArea" name="lastSearchedScrollArea">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -25,7 +25,7 @@
    <property name="widgetResizable">
     <bool>true</bool>
    </property>
-   <widget class="QWidget" name="scrollAreaWidgetContents_2">
+   <widget class="QWidget" name="LSScrollAreaWidgetContents">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -34,9 +34,19 @@
       <height>109</height>
      </rect>
     </property>
+    <widget class="QListWidget" name="lastSearchedListWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>1</y>
+       <width>381</width>
+       <height>111</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="chooseIndustrylabel">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -49,7 +59,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Выбор отрасли&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="reccomendsLabel">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -62,11 +72,11 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Рекомендуемые&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="allIndicatorsLabel">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>140</y>
+     <y>150</y>
      <width>381</width>
      <height>20</height>
     </rect>
@@ -88,10 +98,10 @@
     <enum>Qt::Horizontal</enum>
    </property>
    <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+    <set>QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QScrollArea" name="scrollArea">
+  <widget class="QScrollArea" name="allIndicatorsScrollArea">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -103,7 +113,7 @@
    <property name="widgetResizable">
     <bool>true</bool>
    </property>
-   <widget class="QWidget" name="scrollAreaWidgetContents">
+   <widget class="QWidget" name="AIScrollAreaWidgetContents">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -112,9 +122,19 @@
       <height>249</height>
      </rect>
     </property>
+    <widget class="QListWidget" name="allIndicatorsListWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>381</width>
+       <height>251</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="lastSearchedLabel">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -127,7 +147,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Последние&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QScrollArea" name="scrollArea_3">
+  <widget class="QScrollArea" name="reccomendsScrollArea">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -139,7 +159,7 @@
    <property name="widgetResizable">
     <bool>true</bool>
    </property>
-   <widget class="QWidget" name="scrollAreaWidgetContents_3">
+   <widget class="QWidget" name="RScrollAreaWidgetContents">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -148,9 +168,19 @@
       <height>109</height>
      </rect>
     </property>
+    <widget class="QListWidget" name="recommendsListWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>381</width>
+       <height>111</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
   </widget>
-  <widget class="QTextEdit" name="textEdit_2">
+  <widget class="QTextEdit" name="searchIndicatorsTextEdit">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -160,7 +190,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5">
+  <widget class="QLabel" name="searchLabel">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -173,7 +203,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Поиск среди всех показателей выбранной отрасли&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="chooseIndustryComboBox">
    <property name="geometry">
     <rect>
      <x>15</x>
@@ -181,6 +211,24 @@
      <width>371</width>
      <height>25</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="updateIndicatorsToolButton">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>150</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>↻</string>
    </property>
   </widget>
  </widget>

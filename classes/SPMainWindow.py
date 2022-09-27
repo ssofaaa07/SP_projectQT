@@ -1,32 +1,61 @@
-import sys
-from PyQt5 import uic, QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QCheckBox, \
-    QLabel, QInputDialog, QDialog, QFontComboBox, QPushButton, \
-    QStackedWidget, QGridLayout, QFileDialog, QStyle, QStyleFactory
+from PyQt5 import uic
+from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtCore import Qt
+
+from classes.SPAutoUpdateSettings import SPAutoUpdateSettings
 from uiFiles.MainWindow import Ui_MainWindow
-from uiFiles.IndSubMenuWidget import Ui_Form as IndWidget
-from uiFiles.IndSubMenuWidget1 import Ui_Form as IndWidgetPlus
-from classes.DataBase import DB
-import time
+from classes.DataBase import DataBase
 
 
 class SPMainWindow(QMainWindow, Ui_MainWindow):
-    def __init__(self):
+    def __init__(self, widget, widget_plus):
         super().__init__()
         # uic.loadUi('uiFiles/MainWindow.ui', self) # Подгрузка из ui файла
         self.setupUi(self)  # Подгрузка из py класса
         self.setWindowTitle('Анализ показателей стратегических документов субъекта РФ')
+        self.DB = DataBase()
 
-        self.indWidget = SPIndWidget()
-        self.indWidgetPlus = SPIndWidgetPlus()
+        self.indWidget = widget
+        self.indWidget.main_window = self
+        self.indWidgetPlus = widget_plus
+        self.indWidgetPlus.main_window = self
+        self.DBSettings = SPAutoUpdateSettings()
+
+        self.first_selected_ind = ''
+        self.second_selected_ind = ''
 
         self.connect_period_buttons_logic()
         self.connect_indicators_buttons_logic()
+        self.connect_menubar_actions_logic()
         self.hide_period_periods()
         self.set_years()
 
         self.show()
+
+    def connect_menubar_actions_logic(self):
+        self.autoUpdateAction.triggered.connect(self.DBSettings.show)
+
+    def change_info_text(self, widget_number, field_name, indicator_name, industry=None):
+        if widget_number == 1:
+            self.first_selected_ind = indicator_name
+            print(widget_number, field_name, indicator_name, industry)
+            self.firstIndicatorInfo.setText(
+                "\n".join(["ПЕРВЫЙ ПОКАЗАТЕЛЬ", field_name, "", indicator_name])
+                if industry is None else
+                "\n".join(["ПЕРВЫЙ ПОКАЗАТЕЛЬ", field_name, industry, "", indicator_name])
+            )
+            self.firstIndicatorInfo.setWordWrap(True)
+            self.firstIndicatorInfo.setAlignment(Qt.AlignCenter)
+        elif widget_number == 2:
+            self.second_selected_ind = indicator_name
+            print(widget_number, field_name, indicator_name, industry)
+            self.secondIndicatorInfo.setText(
+                "\n".join(["ВТОРОЙ ПОКАЗАТЕЛЬ", field_name, "", indicator_name])
+                if industry is None else
+                "\n".join(["ВТОРОЙ ПОКАЗАТЕЛЬ", field_name, industry, "", indicator_name])
+            )
+            self.secondIndicatorInfo.setWordWrap(True)
+            self.secondIndicatorInfo.setAlignment(Qt.AlignCenter)
 
     def connect_period_buttons_logic(self) -> None:
         self.oneYearButton.clicked.connect(self.hide_period_periods)
@@ -67,77 +96,8 @@ class SPMainWindow(QMainWindow, Ui_MainWindow):
         self.yearPeriodButton.setDisabled(True)
 
     def set_years(self) -> None:
-        years = DB.get_years()
+        years = self.DB.get_years()
 
         self.oneYearComboBox.addItems(years)
         self.toComboBox.addItems(years)
         self.fromComboBox.addItems(years)
-
-
-class SPIndWidget(QDialog, IndWidget):
-    def __init__(self):
-        super().__init__()
-        # uic.loadUi('uiFiles/IndSubMenuWidget.ui', self) # Подгрузка из ui файла
-        self.setupUi(self)  # Подгрузка из py класса
-
-        self.new_ind_list = []
-        self.indicator_list = []
-        self.accepted_indicator = ''
-        self.full_list_active = True
-
-        self.textEdit.textChanged.connect(self.find_similiar_indicator)
-        self.buttonBox.accepted.connect(self.accept_indicator)
-
-    def find_similiar_indicator(self):
-        text = self.textEdit.toPlainText()
-        if len(text) > 0:
-            self.new_ind_list = [indicator for indicator in self.indicator_list if text.lower() in indicator.lower()]
-            self.listWidget.clear()
-            self.listWidget.addItems(self.new_ind_list)
-            self.full_list_active = False
-        else:
-            self.listWidget.clear()
-            self.listWidget.addItems(self.indicator_list)
-            self.full_list_active = True
-
-    def accept_indicator(self):
-        row_number = self.listWidget.currentRow()
-        if self.full_list_active:
-            self.accepted_indicator = self.indicator_list[row_number]
-        else:
-            self.accepted_indicator = self.new_ind_list[row_number]
-        self.hide()
-        print(self.accepted_indicator)
-
-    def showCYRWidget(self, ind_type) -> None:
-        self.setWindowTitle(f'Выбор показателей ЦУР')
-        self.show()
-
-    def showStrategyWidget(self) -> None:
-        self.setWindowTitle(f'Выбор показателей Стратегии развития')
-        self.indicator_list = DB.get_indicator_names_by_schema('Strategies')
-        self.listWidget.addItems(self.indicator_list)
-
-        self.show()
-
-    def showPMWidget(self) -> None:
-        self.setWindowTitle(f'Выбор показателей Плана мероприятий')
-        ind_names = DB.get_indicator_names_by_schema('public')
-        self.listWidget.addItems(ind_names)
-
-        self.show()
-
-
-class SPIndWidgetPlus(QDialog, IndWidgetPlus):
-    def __init__(self):
-        super().__init__()
-        # uic.loadUi('uiFiles/IndSubMenuWidget.ui', self) # Подгрузка из ui файла
-        self.setupUi(self)  # Подгрузка из py класса
-
-    def showGPWidget(self, ind_type) -> None:
-        self.setWindowTitle(f'Выбор показателей Государственных проектов')
-        self.show()
-
-    def showRPWidget(self) -> None:
-        self.setWindowTitle(f'Выбор показателей Региональных проектов')
-        self.show()
