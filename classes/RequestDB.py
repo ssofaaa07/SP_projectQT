@@ -1,5 +1,3 @@
-import time
-
 from PyQt5.QtCore import QThread
 from classes.DataBase import DataBase
 

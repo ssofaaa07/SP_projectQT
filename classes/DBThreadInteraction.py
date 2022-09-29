@@ -17,7 +17,7 @@ class DBThreadInteraction(QThread):
         self.GP = GPThread()
         self.RP = RPThread()
 
-        self.time_to_wait = 60 * 60
+        self.time_to_wait = 3600
         self.all_indicators_loaded = False
 
     def run(self) -> None:
